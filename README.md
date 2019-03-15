@@ -2,3 +2,5 @@
 VLC MediaPlayerElement for Xamarin.Forms
 
 Work in progress...
+
+![Screenshot](/Screenshot.jpeg)
