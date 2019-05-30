@@ -2,6 +2,7 @@
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using LibVLCSharp.Shared;
+using Xamarin.Forms;
 
 namespace LibVLCSharp.Forms.Sample.MediaPlayerElement
 {
@@ -52,9 +53,14 @@ namespace LibVLCSharp.Forms.Sample.MediaPlayerElement
             var media = new Media(LibVLC,
                 "http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_surround-fix.avi",
                 FromType.FromLocation);
-            var mediaConfiguration = new MediaConfiguration();
-            mediaConfiguration.EnableHardwareDecoding();
-            media.AddOption(mediaConfiguration);
+
+            // temporary, until https://code.videolan.org/videolan/LibVLCSharp/issues/132 is done
+            if (Device.RuntimePlatform == Device.Android)
+            {
+                var mediaConfiguration = new MediaConfiguration();
+                mediaConfiguration.EnableHardwareDecoding();
+                media.AddOption(mediaConfiguration);
+            }
 
             MediaPlayer = new MediaPlayer(media);
             MediaPlayer.Play();
