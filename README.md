@@ -1,5 +1,7 @@
-# LibVLCSharp.Forms.MediaPlayerElement
+# LibVLCSharp.Forms.MediaPlayerElement [Archived]
 VLC MediaPlayerElement for Xamarin.Forms
+
+**This GitHub project has been archived.** Ongoing development on this project can be found in <https://github.com/videolan/libvlcsharp/tree/master/LibVLCSharp.Forms>.
 
 ## Installation
 
